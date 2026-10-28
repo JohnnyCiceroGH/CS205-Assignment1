@@ -1,52 +1,58 @@
 package edu.monmouth.vehicle;
 
-public class Car implements Vehicle 
-{
-    private PowerTypes powerType;
+public class Car implements Vehicle {
+
     private int engineSize;
+    private PowerTypes powerSource;
 
-    public Car(PowerTypes powerType, int engineSize) throws CarException 
-    {
-        setPowerType(powerType);
+    public Car(PowerTypes powerSource, int engineSize) throws CarException {
+        setPowerSource(powerSource);
         setEngineSize(engineSize);
-    }
-
-    @Override
-    public PowerTypes getPowerType() 
-    {
-        return powerType;
-    }
-
-    @Override
-    public void setPowerType(PowerTypes powerType) 
-    {
-        this.powerType = powerType;
     }
 
     public int getEngineSize() {
         return engineSize;
     }
 
-    public void setEngineSize(int engineSize) throws CarException 
-    {
+    public void setEngineSize(int engineSize) throws CarException {
         if (engineSize < VehicleConstants.MIN_ENGINE_SIZE
-                || engineSize > VehicleConstants.MAX_ENGINE_SIZE) 
-        {
+                || engineSize > VehicleConstants.MAX_ENGINE_SIZE) {
+
             throw new CarException(
-                "Invalid engine size: " + engineSize
-                + ". Engine size must be between "
-                + VehicleConstants.MIN_ENGINE_SIZE + " and "
-                + VehicleConstants.MAX_ENGINE_SIZE + "."
-            );
+                    "Invalid engine size: " + engineSize
+                    + ". Engine size must be between "
+                    + VehicleConstants.MIN_ENGINE_SIZE
+                    + " and "
+                    + VehicleConstants.MAX_ENGINE_SIZE + ".");
         }
 
         this.engineSize = engineSize;
     }
 
     @Override
-    public String toString() 
-    {
-        return "Car [powerType=" + powerType
+    public void go() {
+    }
+
+    @Override
+    public void stop() {
+    }
+
+    @Override
+    public PowerTypes powerBy() {
+        return powerSource;
+    }
+
+    public void setPowerSource(PowerTypes powerSource) {
+        this.powerSource = powerSource;
+    }
+
+    public PowerTypes getPowerSource() {
+        return powerSource;
+    }
+
+    @Override
+    public String toString() {
+        return "Car [powerSource=" + powerSource
                 + ", engineSize=" + engineSize + "]";
     }
 }

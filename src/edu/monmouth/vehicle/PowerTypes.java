@@ -1,9 +1,8 @@
 package edu.monmouth.vehicle;
 
-public enum PowerTypes 
-{
-	ELECTRICITY,
+public enum PowerTypes {
+    ELECTRICITY,
+    FUELOIL,
     GASOLINE,
-    DEISEL,
-    FUELOIL
+    DEISEL
 }

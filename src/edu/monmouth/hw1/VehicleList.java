@@ -5,26 +5,19 @@ import edu.monmouth.vehicle.Vehicle;
 public class VehicleList 
 {
     private VehicleNode head;
-    private VehicleNode tail;
     private int count;
 
     public VehicleList() 
     {
         head = null;
-        tail = null;
         count = 0;
     }
 
     public void insert(Vehicle vehicle) 
     {
-        VehicleNode node = new VehicleNode(vehicle, head);
+    	VehicleNode node = new VehicleNode(vehicle);
+        node.setNext(head);
         head = node;
-
-        if (tail == null) 
-        {
-            tail = node;
-        }
-
         count++;
     }
 
@@ -39,48 +32,50 @@ public class VehicleList
 
     public Vehicle last() 
     {
-        if (tail == null) 
-        {
-            return null;
-        }
+    	if (head == null)
+    	   {
+    	       return null;
+    	   }
 
-        return tail.getVehicle();
-    }
+    	   VehicleNode current = head;
+    	   while (current.getNext() != null)
+    	   {
+    	       current = current.getNext();
+    	   }
+    	   return current.getVehicle();
+   }
 
     public Vehicle removeFirst() 
     {
-        if (head == null) {
-            return null;
-        }
-
-        Vehicle removed = head.getVehicle();
-        head = head.getNext();
-        count--;
-
-        if (head == null) 
+    	if (head == null)
         {
-            tail = null;
-        }
+   	        return null;
+   	    }
+    	Vehicle removed = head.getVehicle();
+        head = head.getNext();
+   	    count--;
 
-        return removed;
+    	return removed;
     }
 
     public void insertEnd(Vehicle vehicle) 
     {
-        VehicleNode node = new VehicleNode(vehicle);
-
-        if (tail == null) 
-        {
-            head = node;
-            tail = node;
-        } else 
-        {
-            tail.setNext(node);
-            tail = node;
-        }
-
-        count++;
-    }
+    VehicleNode node = new VehicleNode(vehicle);
+    	 if (head == null)
+    	 {
+    	     head = node;
+    	 }
+    	 else
+    	 {
+    	     VehicleNode current = head;
+    	     while (current.getNext() != null)
+    	     {
+    	         current = current.getNext();
+    	     }
+    	     current.setNext(node);
+    	 }
+      count++;
+   }
 
     public boolean isEmpty() 
     {

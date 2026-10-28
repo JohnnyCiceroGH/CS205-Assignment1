@@ -36,7 +36,7 @@ public class HW1 {
 		System.out.println("Entire list: \n" + vehicleList);
 		
 		// instantiate Vehicles and insert them into the list
-		Vehicle fishingBoat=null, battleShip=null, cruiseShip=null, tesla=null, camaro=null, f350=null;
+		Vehicle fishingBoat=null, battleShip=null, cruiseShip=null, tesla=null, camaro=null, f350=null, AirPlane=null,FighterPlane=null,SonicPlane=null;
 
 		try {
 			fishingBoat=new Boat(PowerTypes.GASOLINE, 12);
@@ -45,15 +45,22 @@ public class HW1 {
 			tesla=new Car(PowerTypes.ELECTRICITY, 12);
 			camaro=new Car(PowerTypes.GASOLINE, 10);
 			f350=new Car(PowerTypes.DEISEL, 4);
+			AirPlane=new Plane(PowerTypes.GASOLINE, 1000);
+			FighterPlane=new Plane(PowerTypes.FUELOIL, 2500);
+			SonicPlane=new Plane(PowerTypes.GASOLINE, 1500);
+			
 		} catch(BoatException be) {
 			System.out.println(be.getMessage());
 			be.printStackTrace();
 		} catch(CarException ce) {
 			System.out.println(ce.getMessage());
 			ce.printStackTrace();
+		} catch (PlaneException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		// verify constructors generate exception with invalid values
-		Vehicle invalidBoat=null, invalidCar=null;
+		Vehicle invalidBoat=null, invalidCar=null, invalidPlane=null;
 		try {
 			invalidBoat = new Boat(PowerTypes.FUELOIL, -8);
 		} catch(BoatException be) {
@@ -66,12 +73,20 @@ public class HW1 {
 			System.out.println(ce.getMessage());
 			ce.printStackTrace();
 		}
+		try {
+			invalidPlane = new Plane(PowerTypes.ELECTRICITY, -1);
+		} catch (PlaneException ce) {
+			System.out.println(ce.getMessage());
+			ce.printStackTrace();
+		}
 		
 		// insert Boat & Car objects into list
 		vehicleList.insert(fishingBoat);
 		vehicleList.insert(cruiseShip);
 		vehicleList.insert(tesla);
 		vehicleList.insert(f350);
+		vehicleList.insert(AirPlane);
+		vehicleList.insert(FighterPlane);
 			
 		System.out.println("After inserting Vehicles: \n" + vehicleList);
 		
@@ -90,5 +105,11 @@ public class HW1 {
 		System.out.println("list after adding another Vehicle: \n" + vehicleList);
 		System.out.println("Number of Vehicles in list: " + vehicleList.size());
 		System.out.println("Is list empty: " + vehicleList.isEmpty());
+		
+		vehicleList.insertEnd(SonicPlane);
+		System.out.println("After adding another Vehicle to end: \n" + vehicleList);
+		System.out.println("Inserted item is: " + vehicleList.last().toString());
+		
+		
 	}
 }
