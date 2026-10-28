@@ -1,0 +1,67 @@
+First: null
+Removed first: null
+Last: null
+Number of Vehicles in list: 0
+Is list empty: true
+Entire list: 
+
+Invalid boat length: -8. Boat length must be between 1 and 1300.
+edu.monmouth.vehicle.BoatException: Invalid boat length: -8. Boat length must be between 1 and 1300.
+	at JavaLab/edu.monmouth.vehicle.Boat.setBoatLength(Boat.java:21)
+	at JavaLab/edu.monmouth.vehicle.Boat.<init>(Boat.java:10)
+	at JavaLab/edu.monmouth.hw1.HW1.main(HW1.java:65)
+Invalid engine size: -4. Engine size must be between 1 and 199.
+edu.monmouth.vehicle.CarException: Invalid engine size: -4. Engine size must be between 1 and 199.
+	at JavaLab/edu.monmouth.vehicle.Car.setEngineSize(Car.java:21)
+	at JavaLab/edu.monmouth.vehicle.Car.<init>(Car.java:10)
+	at JavaLab/edu.monmouth.hw1.HW1.main(HW1.java:71)
+Invalid boat length: -1. Plane length must be between 1 and 3000.
+edu.monmouth.vehicle.PlaneException: Invalid boat length: -1. Plane length must be between 1 and 3000.
+	at JavaLab/edu.monmouth.vehicle.Plane.setPlaneLength(Plane.java:20)
+	at JavaLab/edu.monmouth.vehicle.Plane.<init>(Plane.java:9)
+	at JavaLab/edu.monmouth.hw1.HW1.main(HW1.java:77)
+After inserting Vehicles: 
+Plane [powerSource=FUELOIL, boatLength=2500]
+Plane [powerSource=GASOLINE, boatLength=1000]
+Car [powerSource=DEISEL, engineSize=4]
+Car [powerSource=ELECTRICITY, engineSize=12]
+Boat [powerSource=DEISEL, boatLength=500]
+Boat [powerSource=GASOLINE, boatLength=12]
+After adding another Vehicle to end: 
+Plane [powerSource=FUELOIL, boatLength=2500]
+Plane [powerSource=GASOLINE, boatLength=1000]
+Car [powerSource=DEISEL, engineSize=4]
+Car [powerSource=ELECTRICITY, engineSize=12]
+Boat [powerSource=DEISEL, boatLength=500]
+Boat [powerSource=GASOLINE, boatLength=12]
+Car [powerSource=GASOLINE, engineSize=10]
+First: Plane [powerSource=FUELOIL, boatLength=2500]
+Last: Car [powerSource=GASOLINE, engineSize=10]
+Removed first: Plane [powerSource=FUELOIL, boatLength=2500]
+list after removing first: 
+Plane [powerSource=GASOLINE, boatLength=1000]
+Car [powerSource=DEISEL, engineSize=4]
+Car [powerSource=ELECTRICITY, engineSize=12]
+Boat [powerSource=DEISEL, boatLength=500]
+Boat [powerSource=GASOLINE, boatLength=12]
+Car [powerSource=GASOLINE, engineSize=10]
+list after adding another Vehicle: 
+Boat [powerSource=FUELOIL, boatLength=900]
+Plane [powerSource=GASOLINE, boatLength=1000]
+Car [powerSource=DEISEL, engineSize=4]
+Car [powerSource=ELECTRICITY, engineSize=12]
+Boat [powerSource=DEISEL, boatLength=500]
+Boat [powerSource=GASOLINE, boatLength=12]
+Car [powerSource=GASOLINE, engineSize=10]
+Number of Vehicles in list: 7
+Is list empty: false
+After adding another Vehicle to end: 
+Boat [powerSource=FUELOIL, boatLength=900]
+Plane [powerSource=GASOLINE, boatLength=1000]
+Car [powerSource=DEISEL, engineSize=4]
+Car [powerSource=ELECTRICITY, engineSize=12]
+Boat [powerSource=DEISEL, boatLength=500]
+Boat [powerSource=GASOLINE, boatLength=12]
+Car [powerSource=GASOLINE, engineSize=10]
+Plane [powerSource=GASOLINE, boatLength=1500]
+Inserted item is: Plane [powerSource=GASOLINE, boatLength=1500]
